@@ -13,5 +13,5 @@ Rails.application.routes.draw do
 
   resources :loan_criterions, only: [:index]
 
-  resources :customers, only: [:index]
+  resources :customers, only: [:index, :show]
 end

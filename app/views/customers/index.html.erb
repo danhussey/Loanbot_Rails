@@ -26,6 +26,8 @@
           <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
             Address
           </th>
+          <th>
+          </th>
         </tr>
       </thead>
       <tbody class="[&amp;_tr:last-child]:border-0">
@@ -40,6 +42,9 @@
             <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"><%= customer.email %></td>
             <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"><%= customer.phone %></td>
             <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0"><%= customer.address %></td>
+            <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">
+              <%= link_to 'View', customer_path(customer), class: 'btn btn-primary' %>
+            </td>
           </tr>
         <% end %>
       </tbody>

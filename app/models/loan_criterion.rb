@@ -1,0 +1,2 @@
+class LoanCriterion < ApplicationRecord
+end

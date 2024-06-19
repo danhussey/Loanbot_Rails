@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  annual_pretax_income: 9.99
+  number_of_applicants: 1
+  number_of_dependents_under_18: 1
+  number_of_dependents_over_18: 1
+  loan_type: MyString
+  annual_total_expenses: 9.99
+
+two:
+  annual_pretax_income: 9.99
+  number_of_applicants: 1
+  number_of_dependents_under_18: 1
+  number_of_dependents_over_18: 1
+  loan_type: MyString
+  annual_total_expenses: 9.99

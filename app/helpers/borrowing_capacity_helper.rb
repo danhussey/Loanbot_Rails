@@ -1,0 +1,2 @@
+module BorrowingCapacityHelper
+end

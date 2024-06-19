@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :loan_criterions, only: [:index]
 
   resources :customers, only: [:index, :show]
+
+  resources :borrowing_capacity, only: [:create]
+
 end

@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_15_041712) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_19_093805) do
+  create_table "borrowing_capacity_calculations", force: :cascade do |t|
+    t.decimal "annual_pretax_income"
+    t.integer "number_of_applicants"
+    t.integer "number_of_dependents_under_18"
+    t.integer "number_of_dependents_over_18"
+    t.string "loan_type"
+    t.decimal "annual_total_expenses"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "conversations", force: :cascade do |t|
     t.string "name"
     t.integer "loan_amount"

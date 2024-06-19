@@ -17,4 +17,12 @@ class BorrowingCapacityControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :unprocessable_entity
   end
+
+  test "should return borrowing capacity" do
+    post borrowing_capacity_index_path, params: { args: { annual_pretax_income: 60000, number_of_applicants: 1, number_of_dependents_under_18: 2, number_of_dependents_over_18: 0, loan_type: 'home', annual_total_expenses: 15000 } }
+    
+    assert_response :created
+    json_response = JSON.parse(response.body)
+    assert_not_nil json_response['borrowing_capacity']
+  end
 end

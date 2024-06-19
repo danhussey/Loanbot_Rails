@@ -73,4 +73,11 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Add ngrok to allowable hosts
+  config.hosts << "3d8a-124-150-81-187.ngrok-free.app"
+
+  # Allow requests from the RetellAI host
+  config.hosts << "100.20.5.228"
+
 end

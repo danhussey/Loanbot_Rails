@@ -2,10 +2,10 @@ require 'test_helper'
 
 class BorrowingCapacityControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @customer = Customer.create!(phone_number: "+12137771234", name: "John Doe")
+    @customer = Customer.create!(phone: "+12137771234", first_name: "John", last_name: "Doe")
   end
 
-  test "should create model and associate customer" do
+  test "should create borrowing_capacity_calculation and call model and associate customer" do
     assert_difference('BorrowingCapacityCalculation.count') do
       post borrowing_capacity_index_path, params: { 
         args: { 
@@ -34,7 +34,9 @@ class BorrowingCapacityControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :created
-    assert_equal @customer.id, BorrowingCapacityCalculation.last.customer_id
+
+    # Assert a call metadata was created
+    assert_equal @customer.id, CallMetadatum.last.customer_id
   end
 
   test "should not create model with invalid params" do

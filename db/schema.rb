@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_093805) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_03_102924) do
   create_table "borrowing_capacity_calculations", force: :cascade do |t|
     t.decimal "annual_pretax_income"
     t.integer "number_of_applicants"
@@ -20,6 +20,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_093805) do
     t.decimal "annual_total_expenses"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "call_metadata", force: :cascade do |t|
+    t.string "call_id"
+    t.string "from_number"
+    t.string "to_number"
+    t.string "direction"
+    t.string "call_type"
+    t.string "call_status"
+    t.string "agent_id"
+    t.json "metadata"
+    t.json "retell_llm_dynamic_variables"
+    t.boolean "opt_out_sensitive_data_storage"
+    t.integer "borrowing_capacity_calculation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["borrowing_capacity_calculation_id"], name: "index_call_metadata_on_borrowing_capacity_calculation_id"
   end
 
   create_table "conversations", force: :cascade do |t|
@@ -52,4 +69,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_093805) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "call_metadata", "borrowing_capacity_calculations"
 end

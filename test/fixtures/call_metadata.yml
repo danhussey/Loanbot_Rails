@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  call_id: MyString
+  from_number: MyString
+  to_number: MyString
+  direction: MyString
+  call_type: MyString
+  call_status: MyString
+  agent_id: MyString
+  metadata: 
+  retell_llm_dynamic_variables: 
+  opt_out_sensitive_data_storage: false
+  borrowing_capacity_calculation: one
+
+two:
+  call_id: MyString
+  from_number: MyString
+  to_number: MyString
+  direction: MyString
+  call_type: MyString
+  call_status: MyString
+  agent_id: MyString
+  metadata: 
+  retell_llm_dynamic_variables: 
+  opt_out_sensitive_data_storage: false
+  borrowing_capacity_calculation: two

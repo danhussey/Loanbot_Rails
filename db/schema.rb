@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_03_102924) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_03_111738) do
   create_table "borrowing_capacity_calculations", force: :cascade do |t|
     t.decimal "annual_pretax_income"
     t.integer "number_of_applicants"
@@ -36,6 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_03_102924) do
     t.integer "borrowing_capacity_calculation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
     t.index ["borrowing_capacity_calculation_id"], name: "index_call_metadata_on_borrowing_capacity_calculation_id"
   end
 

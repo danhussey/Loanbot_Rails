@@ -10,5 +10,10 @@ class CallMetadatum < ApplicationRecord
 
   def associate_customer
     self.customer = Customer.find_by(phone: from_number.gsub(' ', ''))
+    if self.customer
+      Rails.logger.info { "Customer ID #{self.customer.id} has been associated with CallMetadatum ID #{self.id}" }
+    else
+      Rails.logger.warn { "No customer found to associate with CallMetadatum ID #{self.id}" }
+    end
   end
 end

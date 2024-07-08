@@ -6,20 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <% if user_signed_in? %>
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %> |
-      <%= link_to 'Login', new_user_session_path %>
-    <% end %>
     <%= yield %>
   </body>
 </html>

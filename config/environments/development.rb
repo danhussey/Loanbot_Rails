@@ -80,4 +80,7 @@ Rails.application.configure do
   # Allow requests from the RetellAI host
   config.hosts << "100.20.5.228"
 
+  # Default url for devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 end

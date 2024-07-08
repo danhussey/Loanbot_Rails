@@ -70,3 +70,6 @@ gem "tailwindcss-rails", "~> 2.6"
 
 # Debugging
 gem 'pry'
+
+# Authentication and auth
+gem 'devise'

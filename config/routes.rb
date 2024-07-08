@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'landing_page/index'
+
+  devise_for :users, controllers: {
+  sessions: 'users/sessions'
+  }
+
   get 'customers/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -16,5 +22,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:index, :show]
 
   resources :borrowing_capacity, only: [:create]
+
+  get 'landing_page', to: 'landing_page#index'
 
 end

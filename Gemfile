@@ -73,3 +73,4 @@ gem 'pry'
 
 # Authentication and auth
 gem 'devise'
+gem "phlex-rails", "~> 1.2"

@@ -21,6 +21,16 @@ class Shared::Navbar < ApplicationComponent
               twitter_link
               github_link
               dark_mode_toggle
+              
+              if !helpers.user_signed_in?
+                render PhlexUI::Link.new(href: helpers.new_user_registration_path, variant: :secondary, class: "ml-4") do
+                  "Sign Up"
+                end
+                render PhlexUI::Link.new(href: helpers.new_user_session_path, variant: :primary, class: "ml-4") do
+                  "Login"
+                end
+              end
+
             end
           end
         end

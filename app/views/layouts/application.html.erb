@@ -12,7 +12,8 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <%#= render 'layouts/navbar' %>
+    <%= render Shared::Navbar.new %>
     <%# if user_signed_in? %>
       <%#= link_to 'Edit profile', edit_user_registration_path %>
        <%#= link_to 'Logout', destroy_user_session_path, method: :delete %>

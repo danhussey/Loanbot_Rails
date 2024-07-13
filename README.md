@@ -2,6 +2,9 @@
 
 ## Project Journal
 
+### 2024-07-13 DH
+I'm thinking this makes more sense presented as as suped up answering machine, especially for this mortgage brokerage use case where being high tough and the personal aspect of the calls is actually an integral part. This software should be just like a dashboard and portal for that interactive answering machine maybe, or at least that's a good way of thinking about it.
+
 ### 2024-07-10 DH
 
 I haven't written anything about this project yet and I'm a few commits in so I thought I might as well now that I have some thoughts about it.

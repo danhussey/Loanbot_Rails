@@ -10,7 +10,7 @@ class Shared::Navbar < ApplicationComponent
   
             render PhlexUI::Link.new(href: helpers.conversations_path, variant: :ghost, class: "hidden md:inline-block") { "Dashboard" }
             render PhlexUI::Link.new(href: helpers.conversations_path, variant: :ghost, class: "hidden md:inline-block") { "Calls" }
-            render PhlexUI::Link.new(href: helpers.customers_index_url, variant: :ghost, class: "hidden md:inline-block") { "Customers" }
+            render PhlexUI::Link.new(href: helpers.customers_path, variant: :ghost, class: "hidden md:inline-block") { "Customers" }
             render PhlexUI::Link.new(href: helpers.loan_criterions_path, variant: :ghost, class: "hidden md:inline-block") { "Agent Settings" }
 
             # render PhlexUI::Link.new(href: helpers.docs_accordion_path, variant: :ghost, class: "hidden md:inline-block") { "Components" }

@@ -76,3 +76,10 @@ gem 'devise'
 gem "phlex-rails", "~> 1.2"
 
 gem "phlex_ui", "~> 0.1.9"
+
+
+# Auto reload
+gem 'guard'
+gem 'guard-livereload', require: false
+gem 'rack-livereload'
+

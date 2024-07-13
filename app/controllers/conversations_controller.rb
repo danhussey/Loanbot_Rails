@@ -4,7 +4,8 @@ class ConversationsController < ApplicationController
     end
   
     def show
-      @conversation = Conversation.find(params[:id])
+      @conversation = Conversation.find(params[:id]) || OpenStruct.new(loan_amount: nil, transcript:"Transcript not available.", summary: "Not available", transcript:"Transcript unavailable.")
+      @customer = @conversation.customer || OpenStruct.new(full_name: 'Unknown', email: 'Email not available')
     end
   
     def new

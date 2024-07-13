@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_114626) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_040131) do
   create_table "borrowing_capacity_calculations", force: :cascade do |t|
     t.decimal "annual_pretax_income"
     t.integer "number_of_applicants"
@@ -48,6 +48,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_114626) do
     t.datetime "updated_at", null: false
     t.string "phone"
     t.string "status"
+    t.integer "customer_id"
+    t.text "transcript"
+    t.text "summary"
+    t.index ["customer_id"], name: "index_conversations_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -83,4 +87,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_114626) do
   end
 
   add_foreign_key "call_metadata", "borrowing_capacity_calculations"
+  add_foreign_key "conversations", "customers"
 end

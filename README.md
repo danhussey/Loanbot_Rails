@@ -1,9 +1,19 @@
 # README
 
+# Features
+
+[-] View basic information of customers who have called (email, name, phone)
+[-] View borrowing capacity calculations 
+[ ] Loan document upload assistance system
+[ ] Menu system
+[ ] Custom menu items and knowledge base editing
+
 ## Project Journal
 
 ### 2024-07-13 DH
 I'm thinking this makes more sense presented as as suped up answering machine, especially for this mortgage brokerage use case where being high tough and the personal aspect of the calls is actually an integral part. This software should be just like a dashboard and portal for that interactive answering machine maybe, or at least that's a good way of thinking about it.
+
+
 
 ### 2024-07-10 DH
 

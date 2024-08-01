@@ -1,310 +1,102 @@
+<!-- app/views/borrowing_capacity_workflow/index.html.erb -->
 
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Borrowing Capacity Voice Agent Workflow Customization</h1>
 
-<div class="container mx-auto max-w-4xl px-4 py-12">
-  <h1 class="mb-8 text-3xl font-bold">Customize Lending Criteria</h1>
-  <form class="space-y-8">
-    <div>
-      <h2 class="mb-4 text-xl font-bold">Lending Criteria</h2>
-      <div class="grid grid-cols-2 gap-6">
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="credit-score"
-          >
-            Minimum Credit Score
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="credit-score"
-            placeholder="700"
-          />
+  <!-- Workflow Overview -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Workflow Overview</h2>
+    <!-- Placeholder for workflow diagram -->
+    <div class="bg-gray-200 p-4 rounded-lg mb-4">
+      <p class="text-gray-600">Workflow diagram placeholder</p>
+    </div>
+    <!-- Stage summary -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <% ['Greeting', 'Data Collection', 'Calculation', 'Result Announcement'].each do |stage| %>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="font-semibold mb-2"><%= stage %></h3>
+          <p class="text-sm text-gray-600">Brief description of <%= stage.downcase %> stage.</p>
         </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="debt-ratio"
-          >
-            Maximum Debt-to-Income Ratio
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="debt-ratio"
-            placeholder="43%"
-          />
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="down-payment"
-          >
-            Minimum Down Payment Percentage
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="down-payment"
-            placeholder="20%"
-          />
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="loan-amount"
-          >
-            Maximum Loan Amount
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="loan-amount"
-            placeholder="$500,000"
-          />
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="loan-term"
-          >
-            Loan Term
-          </label>
-          <button
-            type="button"
-            role="combobox"
-            aria-controls="radix-:R1b6lafnnja:"
-            aria-expanded="false"
-            aria-autocomplete="none"
-            dir="ltr"
-            data-state="closed"
-            data-placeholder=""
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span style="pointer-events:none">Select loan term</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-down h-4 w-4 opacity-50"
-              aria-hidden="true"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </button>
-          <select
-            aria-hidden="true"
-            tabindex="-1"
-            style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-          >
-            <option value=""></option>
-          </select>
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="interest-rate"
-          >
-            Maximum Interest Rate
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="interest-rate"
-            placeholder="6.5%"
-          />
-        </div>
-      </div>
+      <% end %>
+    </div>
+  </section>
+
+  <!-- Greeting and Introduction -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Greeting and Introduction</h2>
+    <div class="mb-4">
+      <label for="greeting-script" class="block text-sm font-medium text-gray-700 mb-2">Greeting Script</label>
+      <textarea id="greeting-script" rows="4" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter greeting script..."></textarea>
     </div>
     <div>
-      <h2 class="mb-4 text-xl font-bold">Target Customer Profile</h2>
-      <div class="grid grid-cols-2 gap-6">
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="income-range"
-          >
-            Income Range
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="text"
-            id="income-range"
-            placeholder="$50,000 - $100,000"
-          />
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="employment-status"
-          >
-            Employment Status
-          </label>
-          <button
-            type="button"
-            role="combobox"
-            aria-controls="radix-:R15alafnnja:"
-            aria-expanded="false"
-            aria-autocomplete="none"
-            dir="ltr"
-            data-state="closed"
-            data-placeholder=""
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span style="pointer-events:none">Select employment status</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-down h-4 w-4 opacity-50"
-              aria-hidden="true"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </button>
-          <select
-            aria-hidden="true"
-            tabindex="-1"
-            style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-          >
-            <option value=""></option>
+      <label for="voice-selection" class="block text-sm font-medium text-gray-700 mb-2">Voice Selection</label>
+      <select id="voice-selection" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+        <option>Select voice</option>
+        <option>Female 1</option>
+        <option>Male 1</option>
+        <option>Neutral 1</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Data Collection Stages -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Data Collection Stages</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Input Fields</h3>
+      <div id="input-fields" class="space-y-4">
+        <!-- Placeholder for dynamic input fields -->
+        <div class="flex items-center space-x-4">
+          <input type="text" class="flex-grow px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Field name">
+          <select class="px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500">
+            <option>Text</option>
+            <option>Number</option>
+            <option>Date</option>
           </select>
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="home-ownership"
-          >
-            Home Ownership Status
-          </label>
-          <button
-            type="button"
-            role="combobox"
-            aria-controls="radix-:R17alafnnja:"
-            aria-expanded="false"
-            aria-autocomplete="none"
-            dir="ltr"
-            data-state="closed"
-            data-placeholder=""
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span style="pointer-events:none">Select home ownership status</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-down h-4 w-4 opacity-50"
-              aria-hidden="true"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </button>
-          <select
-            aria-hidden="true"
-            tabindex="-1"
-            style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-          >
-            <option value=""></option>
-          </select>
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="asset-value"
-          >
-            Minimum Asset Value
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="asset-value"
-            placeholder="$50,000"
-          />
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="industry"
-          >
-            Industry
-          </label>
-          <button
-            type="button"
-            role="combobox"
-            aria-controls="radix-:R1balafnnja:"
-            aria-expanded="false"
-            aria-autocomplete="none"
-            dir="ltr"
-            data-state="closed"
-            data-placeholder=""
-            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <span style="pointer-events:none">Select industry</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-down h-4 w-4 opacity-50"
-              aria-hidden="true"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
-          </button>
-          <select
-            aria-hidden="true"
-            tabindex="-1"
-            style="position:absolute;border:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;word-wrap:normal"
-          >
-            <option value=""></option>
-          </select>
-        </div>
-        <div class="space-y-2">
-          <label
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            for="years-in-business"
-          >
-            Minimum Years in Business
-          </label>
-          <input
-            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            type="number"
-            id="years-in-business"
-            placeholder="2"
-          />
+          <button class="px-4 py-2 text-white bg-red-500 rounded-lg hover:bg-red-600 focus:outline-none">Remove</button>
         </div>
       </div>
+      <button class="mt-4 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none">Add Field</button>
     </div>
-    <div class="flex justify-end">
-      <button
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-        type="submit"
-      >
-        Save Changes
-      </button>
+  </section>
+
+  <!-- Conditional Logic -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Conditional Logic</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">IF-THEN Rules</h3>
+      <div id="conditional-rules" class="space-y-4">
+        <!-- Placeholder for conditional rules -->
+        <div class="p-4 border rounded-lg">
+          <p class="font-medium">If <span class="text-blue-600">income</span> is greater than <span class="text-green-600">$100,000</span></p>
+          <p class="mt-2">Then: Ask about investment properties</p>
+        </div>
+      </div>
+      <button class="mt-4 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none">Add Rule</button>
     </div>
-  </form>
+  </section>
+
+  <!-- Calculation Method -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Calculation Method</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Calculation Formula</h3>
+      <textarea rows="4" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter calculation formula..."></textarea>
+    </div>
+  </section>
+
+  <!-- Result Announcement -->
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Result Announcement</h2>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h3 class="text-xl font-semibold mb-4">Result Message</h3>
+      <textarea rows="4" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter result announcement message..."></textarea>
+    </div>
+  </section>
+
+  <!-- Save and Deploy -->
+  <section class="mt-8 flex justify-end space-x-4">
+    <button class="px-6 py-3 text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 focus:outline-none">Save Draft</button>
+    <button class="px-6 py-3 text-white bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none">Deploy Workflow</button>
+  </section>
 </div>
-

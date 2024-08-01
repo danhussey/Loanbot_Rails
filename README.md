@@ -4,11 +4,16 @@
 
 [-] View basic information of customers who have called (email, name, phone)
 [-] View borrowing capacity calculations 
-[ ] Loan document upload assistance system
-[ ] Menu system
-[ ] Custom menu items and knowledge base editing
+[ ] Allow editing of borrowing capacity basic formula
+[ ] Custom greeting message
+[ ] Custom name of brokerage / broker and phone number to transfer to 
 
 ## Project Journal
+
+### 2024-08-02 DH
+Okay I really want to get this finished now, like ASAP. I'm done with it and want to move on to other things. 
+
+So, I think I'm going to do some really harsh feature trimming. Like, get things down to the most basic barebones version I can think of, and leave it be. I'm going to maybe put 'coming soon (or never)' on parts of the site that have had to be pruned or would make sense in a full product but hasn't made it into the current version. 
 
 ### 2024-07-13 DH
 I'm thinking this makes more sense presented as as suped up answering machine, especially for this mortgage brokerage use case where being high tough and the personal aspect of the calls is actually an integral part. This software should be just like a dashboard and portal for that interactive answering machine maybe, or at least that's a good way of thinking about it.
